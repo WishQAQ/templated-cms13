@@ -1,0 +1,1 @@
+<div class="nti">[field:typename /]</div>

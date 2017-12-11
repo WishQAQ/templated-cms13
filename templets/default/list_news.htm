@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="/skin/css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/skin/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/skin/js/jquery.superslide.2.1.1.js"></script><!--banner-->
+
+<script><!--tab-->
+<!--
+function setTab(name,cursel,n){
+ for(i=1;i<=n;i++){
+  var menu=document.getElementById(name+i);
+  var con=document.getElementById("con_"+name+"_"+i);
+  menu.className=i==cursel?"hover":"";
+  con.style.display=i==cursel?"block":"none";
+ }
+}
+//-->
+</script>
+</head>
+
+<body>
+{dede:include filename="head.htm"/}
+<div style=" background:url(/skin/img/bar.png) no-repeat top center; min-height:600px; padding-top:280px">
+  <div class="w1200"> {dede:include filename="left.htm"/}
+    <div class="right">
+       <div class="weizhi">当前位置：{dede:field name='position'/}</div>
+      {dede:type}<div class="nti">[field:typename /]</div>{/dede:type}
+      <div class="newlist">
+        <ul>
+        {dede:list pagesize ='4'}
+          <li>
+            <div class="n_tu"><img src="[field:picname/]"/></div>
+            <div class="n_zi">
+              <p style=" font-size:16px; color:#333; margin-bottom:5px; ">[field:title/]<span class="n_sj">[field:pubdate function="MyDate('Y-m-d',@me)"/]</span></p>
+              <div style="color:#999; height:80px; margin-bottom:15px; overflow:hidden; ">[field:description function='cn_substr(@me,250)'/]...</div>
+              <a href="[field:arcurl/]">立即查看</a> </div>
+            <div class="clear"></div>
+          </li>
+         {/dede:list}
+        </ul>
+        <div class="m-page">
+	<div class="pagess">
+<ul>
+ {dede:pagelist listitem="index,end,pre,next,pageno" listsize="5"/}
+</ul>
+</div>
+</div>
+
+
+
+<!-- /pages --> 
+<style>
+/*分页*/
+.m-page{text-align:right;font-size:0;height:38px;line-height:38px; padding-right:10px;}
+.m-page li{ display:inline}
+.m-page a,.m-page i{display:inline-block;font-size:15px;background-color:#fff; padding:0px 13px;height:36px;overflow:hidden;text-align:center;border:1px #ddd solid;color:#bbb;font-family:Arial;margin-left:5px;vertical-align:top;}
+.m-page a.next,.m-page a.prev{font-family:宋体;font-size:16px;font-weight:700;}
+.m-page a:hover,.m-page li.thisclass a{background-color:#ff0000;color:#fff;}
+.m-page span{font-size:14px;padding-right:10px;}
+</style>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<!--尾页-->
+{dede:include filename="footer.htm"/}
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:global.cfg_description/}" />
+<link href="/skin/css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/skin/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/skin/js/jquery.superslide.2.1.1.js"></script><!--banner-->
+
+<script><!--tab-->
+<!--
+function setTab(name,cursel,n){
+ for(i=1;i<=n;i++){
+  var menu=document.getElementById(name+i);
+  var con=document.getElementById("con_"+name+"_"+i);
+  menu.className=i==cursel?"hover":"";
+  con.style.display=i==cursel?"block":"none";
+ }
+}
+//-->
+</script>
+</head>
+
+<body>
+
+<!--右侧--> 
+{dede:include filename="head.htm"/}
+<div style=" background:url(/skin/img/nbg.png) no-repeat top center; min-height:600px; padding-top:280px">
+  <div class="w1200">
+    <div class="wenti"></div>
+    <div class="wen_left">
+      <ul>
+        <li>
+          <table width="100%" border="0">
+            <tr>
+              <td  valign="top"  class="wti" style=" color:#333">问<span style=" margin-left:30px">题</span>:</td>
+              <td>问题问题问题！</td>
+            </tr>
+            <tr style=" height:15px"></tr>
+            <tr>
+              <td valign="top" class="wti" style=" color:#0569b9">专家解答：</td>
+              <td>撒旦</td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+    </div>
+    <div class="wen_right">
+    <form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+<input type="hidden" name="action" value="post" />
+<input type="hidden" name="diyid" value="1" />
+<input type="hidden" name="do" value="2" />
+
+      <div class="wen">
+        <div class="w_biao">
+          <div >您的姓名：</div>
+          <input name="name" type="text" value="请填写真实姓名" onfocus="if(this.value=='请填写真实姓名') {this.value='';}"
+      onblur="if(this.value=='') {this.value='请填写真实姓名';}" />
+        </div>
+        <div class="w_biao">
+          <div >您的联系方式：</div>
+          <input name="phone" type="text" value="请填写真实号码，方便专家解答" onfocus="if(this.value=='请填写真实号码，方便专家解答') {this.value='';}"
+      onblur="if(this.value=='') {this.value='请填写真实号码，方便专家解答';}" />
+        </div>
+        <div class="w_biao">
+          <div >您的QQ号码：</div>
+          <input name="qq" type="text" value="请填写真实号码，方便专家解答" onfocus="if(this.value=='请填写真实号码，方便专家解答') {this.value='';}"
+      onblur="if(this.value=='') {this.value='请填写真实号码，方便专家解答';}" />
+        </div>
+        <div class="w_biao">
+          <div >您的问题：</div>
+          <textarea name="content" ></textarea>
+        </div>
+        <input type="hidden" name="dede_fields" value="name,text;phone,text;qq,text;content,multitext" />
+        <input type="hidden" name="dede_fieldshash" value="299c25034a8b291d894d61668a6509b7" />
+        <input type="submit" id="wd" class="w_tj" value="提&nbsp;交" />
+        <div class="clear"></div>
+      </div>
+      </form>
+
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<!--尾页--> 
+{dede:include filename="footer.htm"/}
+</body>
+</html>

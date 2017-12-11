@@ -1,0 +1,1 @@
+<li><a href="" target="_blank" style=" display:block;background:url([field:picname/]) no-repeat center center; height:480px"></a></li>

@@ -1,0 +1,2 @@
+INSERT INTO `dede_guestbook` VALUES('1','几个环境铬合金铬合金铬合金','0','1','0','lala','273341531@qq.com','','273341531','01','127.0.0.148','1344738695','1','发给电饭锅电饭锅电饭锅电饭锅电饭锅');
+INSERT INTO `dede_guestbook` VALUES('2','测试','0','1','1344742381','拉拉','','','273341531','','127.0.0.148','1344739809','1','<div class=\'rebox\'><div class=\'rebox\'><div class=\'rebox\'><div class=\'rebox\'>大撒旦</div>\r\n	</div>\r\n</div>\r\n</div>\n<span style=\"font-size: 16px\"><font color=\"red\">管理员回复：金士顿还是个傻瓜化卡石膏矿圣迭戈看是大话股神和的宽广fks交电话费壸浆箪食卡发货单第三方</font></span>');

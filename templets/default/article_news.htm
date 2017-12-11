@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="/skin/css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/skin/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/skin/js/jquery.superslide.2.1.1.js"></script><!--banner-->
+
+<script><!--tab-->
+<!--
+function setTab(name,cursel,n){
+ for(i=1;i<=n;i++){
+  var menu=document.getElementById(name+i);
+  var con=document.getElementById("con_"+name+"_"+i);
+  menu.className=i==cursel?"hover":"";
+  con.style.display=i==cursel?"block":"none";
+ }
+}
+//-->
+</script>
+</head>
+
+<body>
+{dede:include filename="head.htm"/}
+<div style=" background:url(/skin/img/bar.png) no-repeat top center; min-height:600px; padding-top:280px">
+  <div class="w1200">
+    {dede:include filename="left.htm"/}
+    <div class="right">
+       <div class="weizhi">当前位置：{dede:field name='position'/}</div>
+      {dede:type}<div class="nti">[field:typename /]</div>{/dede:type}
+      <div class="dan">
+        <div class="d_ti">{dede:field.title/}</div>
+        <div class="d_sj"> 时间：<span>{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}</span>&nbsp;&nbsp;&nbsp;
+          作者：<span>{dede:field.writer/}</span>&nbsp;&nbsp;&nbsp;        
+          浏览：<span><script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}"type='text/javascript' language="javascript"></script></span>次</div>
+        <div class="dan1">
+         {dede:field.body/}
+        </div> 
+        <div class="fx"> 
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32"><div class="fl" style=" color:#888">分享到：</div>
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+          
+        </div>
+        <div class="clear"></div>
+        <div class="fan">
+          <div>{dede:prenext get='pre'/}</div>
+          <div>{dede:prenext get='next'/}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<!--尾页--> 
+{dede:include filename="footer.htm"/}
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="/skin/css/webstyle.css" rel="stylesheet" type="text/css" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<!--[if IE 6]>
+<script type="text/javascript" src="/skin/js/png.js"></script>
+<script>
+PNG.fix('*');
+</script><![endif]-->
+</head>
+<style>
+.main_r_list ul li a:hover {
+  color:red;
+}
+</style>
+<body>
+<!--头部 开始-->
+<script src="/skin/js/jquery-1.7.1.min.js"></script>
+<script src="/skin/js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/skin/css/jquery.jslides.css" media="screen" />
+<script type="text/javascript" src="/skin/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="/skin/js/jquery.jslides.js"></script>
+<script type="text/javascript">
+function check_seachkey(){
+	var key=$("#seach_key").val();
+	if(!key){
+		alert("请输入查询的关键词！！！");
+		return false;
+		}
+	}
+$(function(){
+	$("#nav>ul>li").hover(function(){
+		$(this).find("ul").stop(true,true).show("600");
+		},function(){
+			$(this).find("ul").stop(true,true).hide("600");
+			});
+	$("#search").click(function(){
+		$("#show").fadeToggle();
+	});
+})
+</script>
+<!--header start-->
+{dede:include filename="head.htm"/}
+<!--头部 结束--> 
+<!--index start-->
+<div class="contact min_w contact_back contact_foot">
+  <div class="system container">
+    
+    <div class="theme_top"><span class="theme_01 fl" >{dede:field.typenameen /}</span> <span class="theme_03 fl"><span>{dede:field.typename /}</span><font>blossom glorious，we meet here<br>
+      绽放光彩,我们在这里相遇</font></span> </div>
+    <div class="cl"></div>
+    <style>
+
+.rollBox{position:relative;}
+.Cont{width:1200px;overflow:hidden;}
+.ScrCont{width:10000000px;}
+.pic{width:180px;float:left;text-align:center;margin-right:2px; margin-left:3px;line-height:14px;}
+.pic img{margin-bottom:5px;}
+
+#List1,#List2{float:left;}
+
+</style>
+    <div class="mainbody_area pro_list">
+  		<div class="rollBox">
+            <div class="LeftBotton" onmousedown="ISL_GoUp()" onmouseup="ISL_StopUp()" onmouseout="ISL_StopUp()" style="height:85px;width:32px;background:url(/skin/img/p_09.png) no-repeat;cursor:pointer;position:absolute;left:-32px;top:0;"></div>
+            <div class="Cont" id="ISL_Cont">
+              <div class="ScrCont">
+                <div id="List1">
+                
+                
+                {dede:channel  type ='son'}
+                    <div class="pic"><li><a href="[field:typelink/]">[field:typename/]<span>[field:typenameen/]<br></span></a></li></div>
+                  {/dede:channel} 
+                    
+                  <div class="cl"></div>
+                  
+                </div>
+               
+              </div>
+            </div>
+            <div class="RightBotton" onmousedown="ISL_GoDown()" onmouseup="ISL_StopDown()" onmouseout="ISL_StopDown()" style="height:85px;width:32px;background:url(/skin/img/p_10.png) no-repeat;cursor:pointer;position:absolute;right:-32px;top:0;"></div>
+  		</div>
+	</div>
+
+<script language="javascript" type="text/javascript">
+<!--//--><![CDATA[//><!--
+//图片滚动列表 mengjia 070816
+var Speed = 5; //速度(毫秒)
+var Space = 5; //每次移动(px)
+var PageWidth = 180; //翻页宽度
+var fill = 0; //整体移位
+var MoveLock = false;
+var MoveTimeObj;
+var Comp = 0;
+var AutoPlayObj = null;
+GetObj("List2").innerHTML = GetObj("List1").innerHTML;
+GetObj('ISL_Cont').scrollLeft = fill;
+GetObj("ISL_Cont").onmouseover = function(){clearInterval(AutoPlayObj);}
+GetObj("ISL_Cont").onmouseout = function(){AutoPlay();}
+AutoPlay();
+function GetObj(objName){if(document.getElementById){return eval
+
+('document.getElementById("'+objName+'")')}else{return eval
+
+('document.all.'+objName)}}
+function AutoPlay(){ //自动滚动
+ clearInterval(AutoPlayObj);
+ AutoPlayObj = setInterval('ISL_GoDown();ISL_StopDown();',3000); //间隔时间
+}
+function ISL_GoUp(){ //上翻开始
+ if(MoveLock) return;
+ clearInterval(AutoPlayObj);
+ MoveLock = true;
+ MoveTimeObj = setInterval('ISL_ScrUp();',Speed);
+}
+function ISL_StopUp(){ //上翻停止
+ clearInterval(MoveTimeObj);
+ if(GetObj('ISL_Cont').scrollLeft % PageWidth - fill != 0){
+  Comp = fill - (GetObj('ISL_Cont').scrollLeft % PageWidth);
+  CompScr();
+ }else{
+  MoveLock = false;
+ }
+ AutoPlay();
+}
+function ISL_ScrUp(){ //上翻动作
+ if(GetObj('ISL_Cont').scrollLeft <= 0){GetObj('ISL_Cont').scrollLeft = GetObj
+
+('ISL_Cont').scrollLeft + GetObj('List1').offsetWidth}
+ GetObj('ISL_Cont').scrollLeft -= Space ;
+}
+function ISL_GoDown(){ //下翻
+ clearInterval(MoveTimeObj);
+ if(MoveLock) return;
+ clearInterval(AutoPlayObj);
+ MoveLock = true;
+ ISL_ScrDown();
+ MoveTimeObj = setInterval('ISL_ScrDown()',Speed);
+}
+function ISL_StopDown(){ //下翻停止
+ clearInterval(MoveTimeObj);
+ if(GetObj('ISL_Cont').scrollLeft % PageWidth - fill != 0 ){
+  Comp = PageWidth - GetObj('ISL_Cont').scrollLeft % PageWidth + fill;
+  CompScr();
+ }else{
+  MoveLock = false;
+ }
+ AutoPlay();
+}
+function ISL_ScrDown(){ //下翻动作
+ if(GetObj('ISL_Cont').scrollLeft >= GetObj('List1').scrollWidth){GetObj
+
+('ISL_Cont').scrollLeft = GetObj('ISL_Cont').scrollLeft - GetObj
+
+('List1').scrollWidth;}
+ GetObj('ISL_Cont').scrollLeft += Space ;
+}
+function CompScr(){
+ var num;
+ if(Comp == 0){MoveLock = false;return;}
+ if(Comp < 0){ //上翻
+  if(Comp < -Space){
+   Comp += Space;
+   num = Space;
+  }else{
+   num = -Comp;
+   Comp = 0;
+  }
+  GetObj('ISL_Cont').scrollLeft -= num;
+  setTimeout('CompScr()',Speed);
+ }else{ //下翻
+  if(Comp > Space){
+   Comp -= Space;
+   num = Space;
+  }else{
+   num = Comp;
+   Comp = 0;
+  }
+  GetObj('ISL_Cont').scrollLeft += num;
+  setTimeout('CompScr()',Speed);
+ }
+}
+//--><!]]>
+</script>
+    
+    
+    
+   
+    
+    
+    
+    <div class="pro_pic">
+    <ul>
+    {dede:list pagesize ='8'}
+            	      <li><a href="[field:arcurl/]"><img src="[field:picname/]" width="278" height="420"><span class="pro_pic_01"><span>[field:title/]<font></font></span><font class="font_12 pro_pic_02">[field:pubdate function="MyDate('d-m-Y',@me)"/]  Location- </font></span></a></li>
+     {/dede:list}      
+              
+    </ul>
+    </div>
+    <div class="cl"></div>
+    <div class="m-page">
+	<div class="pagess">
+<ul>
+ {dede:pagelist listitem="index,end,pre,next,pageno" listsize="5"/}
+</ul>
+</div>
+</div>
+
+<!-- /pages --> 
+
+  </div>
+</div>
+
+<!--index end--> 
+<!--底部 开始-->
+  <!--footer start-->
+{dede:include filename="footer.htm"/}
+<!--底部 结束-->
+</body>
+
+</html>

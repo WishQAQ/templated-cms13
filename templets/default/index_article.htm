@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:global.cfg_description/}" />
+<link href="/skin/css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/skin/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/skin/js/jquery.superslide.2.1.1.js"></script><!--banner-->
+
+<script><!--tab-->
+<!--
+function setTab(name,cursel,n){
+ for(i=1;i<=n;i++){
+  var menu=document.getElementById(name+i);
+  var con=document.getElementById("con_"+name+"_"+i);
+  menu.className=i==cursel?"hover":"";
+  con.style.display=i==cursel?"block":"none";
+ }
+}
+//-->
+</script>
+</head>
+
+<body>
+{dede:include filename="head.htm"/}
+<div style=" background:url(/skin/img/bar.png) no-repeat top center; min-height:600px; padding-top:280px">
+  <div class="w1200">
+    {dede:include filename="left.htm"/}
+    <div class="right">
+      <div class="weizhi">当前位置：{dede:field name='position'/}</div>
+      {dede:type}<div class="nti">[field:typename /]</div>{/dede:type}
+      <div class="dan">
+       
+        
+        <div class="dan1">
+          {dede:field name='content'/}
+        </div>
+        
+   
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<!--尾页-->
+{dede:include filename="footer.htm"/}
+</body>
+</html>

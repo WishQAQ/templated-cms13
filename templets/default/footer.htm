@@ -1,0 +1,63 @@
+<div class="footbg" style=" margin-top:0">
+  <div class="w1200">
+    <div class="fnav">
+      <ul>
+        <li><img src="/skin/img/f1.jpg" width="42" height="42" /></li>
+        <li class="da">快速通道</li>
+        <li><a href="tencent://message/?uin={dede:global.cfg_qq/}">预约挂号</a></li>
+        <li><a href="tencent://message/?uin={dede:global.cfg_qq/}">在线诊疗问答</a></li>
+      </ul>
+      <div class="fxian"></div>
+      <ul>
+        <li><img src="/skin/img/f2.jpg" width="42" height="42" /></li>
+        <li class="da">友情链接</li>
+        {dede:flink row='4'/}
+      </ul>
+      <div class="fxian"></div>
+      <ul>
+        <li><img src="/skin/img/f3.jpg" width="42" height="42" /></li>
+        <li class="da">交通指南</li>
+        {dede:type typeid='25'}
+        <li><a href="[field:typeurl /]">联系我们</a></li>
+        {/dede:type}
+      </ul>
+      <div class="fxian"></div>
+      <div class="clear"> </div>
+    </div>
+    <div class="flxwm">
+      <p style=" font-size:16px; margin-bottom:10px; line-height:2.5">联系我们：</p>
+      <dl>
+        <dt>地址：</dt>
+        <dd>{dede:global.cfg_dizhi/}</dd>
+        <dt>邮箱：</dt>
+        <dd>{dede:global.cfg_email/}</dd>
+        <dt>电话：</dt>
+        <dd>{dede:global.cfg_dianhua/}</dd>
+      </dl>
+    </div>
+    <div class="fxian"></div>
+    <div class="fguan">
+      <div style=" text-align:center; margin-top:8px"><a href="/"><img src="/skin/img/foot-logo.png" width="300" height="86" /></a></div>
+      <ul>
+        <li>关注我们 :</li>
+        <li><a><img src="/skin/img/fg1.png" width="35" height="30" /></a></li>
+        <li><a><img src="/skin/img/fg2.png" width="35" height="30" /></a></li>
+        <li> <span class="g1"> <a href="javascript:void(0)"  class="g1_1" title="二维码"></a> <s class="g1_2" ><img src="/skin/img/weixin.png"/></s> </span> </li>
+        <li><a href="tencent://message/?uin={dede:global.cfg_qq/}"><img src="/skin/img/fg4.png" width="35" height="30" /></a></li>
+      </ul>
+      <div class="clear"> </div>
+    </div>
+    <script type="text/javascript">
+$(function(){
+  $(".g1").hover(function(){
+<!--  $(this).children(".g1_1").addClass("bai")-->
+  $(this).children(".g1_2").slideDown(50)
+  },function(){
+  <!--$(this).children(".g1_1").removeClass("bai")-->
+      $(this).children(".g1_2").slideUp(50)
+  })
+})
+</script>
+    <div class="clear"> </div>
+  </div>
+</div>
